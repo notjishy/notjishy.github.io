@@ -4,10 +4,11 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Arial", sans-serif;
+	color: #ffffff;
 }
 
 body {
-	background-color: #f5f5f5;
+	background-color: #121212;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -24,10 +25,10 @@ body {
 }
 
 .profile {
-	background-color: #fff;
+	background-color: #1e1e1e;
 	border-radius: 12px;
 	padding: 20px 40px;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 	max-width: 900px;
 	width: 100%;
 	display: flex;
@@ -51,7 +52,7 @@ body {
 	height: 120px;
 	border-radius: 50%;
 	object-fit: cover;
-	border: 5px solid #f0f0f0;
+	border: 5px solid #2d2d2d;
 	flex-shrink: 0;
 }
 
@@ -65,11 +66,11 @@ body {
 	font-size: 26px;
 	font-weight: 700;
 	margin-bottom: 8px;
-	color: #333;
+	color: #ffffff;
 }
 
 .bio {
-	color: #666;
+	color: #aaaaaa;
 	font-size: 16px;
 	line-height: 1.4;
 }
@@ -111,13 +112,13 @@ body {
 	filter: brightness(0) invert(1);
 }
 
-/* Button Colors - Greyscale (all same color) */
+/* Button Colors - Darker shades */
 .bluesky,
 .discord,
 .github,
 .youtube,
 .twitch {
-	background-color: #666666;
+	background-color: #333333;
 }
 
 /* Copy Notification */
@@ -126,7 +127,7 @@ body {
 	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%) translateY(20px);
-	background-color: #666666;
+	background-color: #333333;
 	color: white;
 	padding: 8px 16px;
 	border-radius: 4px;
@@ -136,7 +137,7 @@ body {
 	transition:
 		opacity 0.3s ease,
 		transform 0.3s ease;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .copy-notification.show {
