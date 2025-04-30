@@ -5,13 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>jishe website</title>
         <link rel="stylesheet" href="./style.css" />
+        <script>
+            function copyToClipboard(text) {
+                navigator.clipboard
+                    .writeText(text)
+                    .then(() => {
+                        // Show notification
+                        const notification =
+                            document.getElementById("copy-notification");
+                        notification.classList.add("show");
+
+                        // Hide notification after 2 seconds
+                        setTimeout(() => {
+                            notification.classList.remove("show");
+                        }, 2000);
+                    })
+                    .catch((err) => {
+                        console.error("Could not copy text: ", err);
+                    });
+            }
+        </script>
     </head>
 
     <body>
         <div class="profile-container">
             <div class="profile">
                 <div class="profile-header">
-                    <img class="pfp" src="./assets/PFP.jpg" alt="Profile Picture" />
+                    <img
+                        class="pfp"
+                        src="./assets/PFP.jpg"
+                        alt="Profile Picture"
+                    />
                     <div class="profile-info">
                         <h1 class="name">jishy</h1>
                         <p class="bio">temporary text ill make it later</p>
@@ -27,10 +51,18 @@
                         <img src="./assets/icons/bluesky.svg" alt="Bluesky" />
                         <span>Bluesky</span>
                     </a>
-                    <a href="#" class="social-btn discord" aria-label="Discord">
+                    <a
+                        href="javascript:void(0)"
+                        class="social-btn discord"
+                        onclick="copyToClipboard('jishe')"
+                        aria-label="Discord"
+                    >
                         <img src="./assets/icons/discord.svg" alt="Discord" />
                         <span>jishe</span>
                     </a>
+                    <div id="copy-notification" class="copy-notification">
+                        jishe copied to clipboard
+                    </div>
                     <a
                         href="https://github.com/NotJishy"
                         target="_blank"
