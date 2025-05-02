@@ -262,4 +262,13 @@ body {
 		min-width: 110px;
 		padding: 8px 15px;
 	}
+
+	.skills-container {
+		gap: 30px;
+	}
+
+	.skill-item {
+		width: 32px;
+		height: 32px;
+	}
 }
