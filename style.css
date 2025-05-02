@@ -152,6 +152,88 @@ body {
 	transform: translateX(-50%) translateY(0);
 }
 
+.divider {
+	width: 100%;
+	border: none;
+	border-top: 1px solid #444444;
+	margin: 15px 0;
+}
+
+.skills-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 60px;
+	width: 100%;
+	margin-top: 15px;
+}
+
+.skill-item {
+	position: relative;
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	cursor: pointer;
+	transition: all 0.25s ease;
+}
+
+.skill-item img {
+	width: 100%;
+	height: 100%;
+	filter: brightness(0) invert(1);
+	transition: filter 0.25s ease;
+}
+
+.skill-item:hover {
+	transform: translateY(-5px);
+}
+
+.skill-item:hover img {
+	filter: brightness(0) invert(0.8) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+/* Skill Item Tooltip */
+.skill-item::before {
+	content: attr(data-tooltip);
+	position: absolute;
+	top: -35px;
+	left: 50%;
+	transform: translateX(-50%) translateY(10px);
+	background-color: #333333;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 12px;
+	white-space: nowrap;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.25s ease;
+}
+
+.skill-item::after {
+	content: "";
+	position: absolute;
+	top: -15px;
+	left: 50%;
+	transform: translateX(-50%) translateY(5px);
+	border-width: 5px;
+	border-style: solid;
+	border-color: #333333 transparent transparent transparent;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.25s ease;
+}
+
+.skill-item:hover::before,
+.skill-item:hover::after {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(-50%) translateY(0);
+}
+
 /* Responsive design */
 @media (max-width: 900px) {
 	.profile {
