@@ -39,7 +39,7 @@ body {
 	/* Background Image - Using a layering effect with a gradient overlay (30% opacity at top, 60% at bottom) to darken the image */
 	background:
 		linear-gradient(rgba(30, 30, 30, 0.3), rgba(30, 30, 30, 0.6)),
-		url("./assets/backgrounds/the_deep_dark.jpg");
+		url("../assets/backgrounds/the_deep_dark.jpg");
 	background-size: cover;
 	background-position: center;
 }
