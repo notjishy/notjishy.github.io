@@ -212,7 +212,8 @@ body {
 .discord,
 .github,
 .youtube,
-.twitch {
+.twitch,
+.reddit {
 	background-color: var(--btn-bg-color);
 }
 
