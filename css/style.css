@@ -1,18 +1,101 @@
+/* Theme Variables */
+:root {
+	/* Dark Theme - Default */
+	--bg-color: #121212;
+	--profile-bg-img: url("../assets/backgrounds/the_deep_dark.jpg");
+	--profile-bg-color: #1e1e1e;
+	--profile-gradient: linear-gradient(
+		rgba(30, 30, 30, 0.3),
+		rgba(30, 30, 30, 0.6)
+	);
+	--text-color: #ffffff;
+	--bio-color: #aaaaaa;
+	--border-color: #2d2d2d;
+	--divider-color: #444444;
+	--btn-bg-color: #333333;
+	--box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	--tooltip-bg-color: #333333;
+	--icon-filter: brightness(0) invert(1);
+}
+
+.light-theme {
+	--bg-color: #f0f0f0;
+	--profile-bg-img: url("../assets/backgrounds/snow.jpg");
+	--profile-bg-color: #ffffff;
+	--profile-gradient: linear-gradient(
+		rgba(255, 255, 255, 0.8),
+		rgba(255, 255, 255, 0.95)
+	);
+	--text-color: #121212;
+	--bio-color: #555555;
+	--border-color: #dddddd;
+	--divider-color: #cccccc;
+	--btn-bg-color: #e0e0e0;
+	--box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	--tooltip-bg-color: #e0e0e0;
+	--icon-filter: brightness(0);
+}
+
 /* General styles */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Arial", sans-serif;
-	color: #ffffff;
+	color: var(--text-color);
 }
 
 body {
-	background-color: #121212;
+	background-color: var(--bg-color);
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: background-color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: var(--btn-bg-color);
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover {
+	transform: translateY(-2px);
+}
+
+.theme-icon {
+	width: 20px;
+	height: 20px;
+	stroke: var(--text-color);
+	transition: all 0.3s ease;
+}
+
+/* Hide sun icon by default in dark mode */
+.theme-icon.sun {
+	display: none;
+}
+
+/* In light mode, show sun and hide moon */
+.light-theme .theme-icon.sun {
+	display: block;
+}
+
+.light-theme .theme-icon.moon {
+	display: none;
 }
 
 /* Profile Container */
@@ -25,10 +108,10 @@ body {
 }
 
 .profile {
-	background-color: #1e1e1e;
+	background-color: var(--profile-bg-color);
 	border-radius: 12px;
 	padding: 20px 40px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	box-shadow: var(--box-shadow);
 	max-width: 900px;
 	width: 100%;
 	display: flex;
@@ -37,11 +120,12 @@ body {
 	gap: 15px;
 
 	/* Background Image - Using a layering effect with a gradient overlay (30% opacity at top, 60% at bottom) to darken the image */
-	background:
-		linear-gradient(rgba(30, 30, 30, 0.3), rgba(30, 30, 30, 0.6)),
-		url("../assets/backgrounds/the_deep_dark.jpg");
+	background: var(--profile-gradient), var(--profile-bg-img);
 	background-size: cover;
 	background-position: center;
+	transition:
+		background-color 0.3s ease,
+		box-shadow 0.3s ease;
 }
 
 /* Profile Header - Side by side layout */
@@ -59,8 +143,9 @@ body {
 	height: 120px;
 	border-radius: 50%;
 	object-fit: cover;
-	border: 5px solid #2d2d2d;
+	border: 5px solid var(--border-color);
 	flex-shrink: 0;
+	transition: border-color 0.3s ease;
 }
 
 /* Profile Information */
@@ -73,13 +158,15 @@ body {
 	font-size: 26px;
 	font-weight: 700;
 	margin-bottom: 8px;
-	color: #ffffff;
+	color: var(--text-color);
+	transition: color 0.3s ease;
 }
 
 .bio {
-	color: #aaaaaa;
+	color: var(--bio-color);
 	font-size: 16px;
 	line-height: 1.4;
+	transition: color 0.3s ease;
 }
 
 /* Social Links */
@@ -99,11 +186,12 @@ body {
 	padding: 8px 20px;
 	border-radius: 8px;
 	text-decoration: none;
-	color: #fff;
+	color: var(--text-color);
 	font-weight: 500;
 	transition:
 		transform 0.2s ease,
-		opacity 0.2s ease;
+		opacity 0.2s ease,
+		color 0.3s ease;
 	min-width: 120px;
 	justify-content: center;
 }
@@ -116,7 +204,7 @@ body {
 .social-btn img {
 	width: 20px;
 	height: 20px;
-	filter: brightness(0) invert(1);
+	filter: var(--icon-filter);
 }
 
 /* Button Colors - Darker shades */
@@ -125,7 +213,7 @@ body {
 .github,
 .youtube,
 .twitch {
-	background-color: #333333;
+	background-color: var(--btn-bg-color);
 }
 
 /* Copy Notification */
@@ -134,8 +222,8 @@ body {
 	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%) translateY(20px);
-	background-color: #333333;
-	color: white;
+	background-color: var(--btn-bg-color);
+	color: var(--text-color);
 	padding: 8px 16px;
 	border-radius: 4px;
 	font-size: 14px;
@@ -143,7 +231,9 @@ body {
 	pointer-events: none;
 	transition:
 		opacity 0.3s ease,
-		transform 0.3s ease;
+		transform 0.3s ease,
+		background-color 0.3s ease,
+		color 0.3s ease;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -155,8 +245,9 @@ body {
 .divider {
 	width: 100%;
 	border: none;
-	border-top: 1px solid #444444;
+	border-top: 1px solid var(--divider-color);
 	margin: 15px 0;
+	transition: border-color 0.3s ease;
 }
 
 .skills-container {
@@ -183,7 +274,7 @@ body {
 .skill-item img {
 	width: 100%;
 	height: 100%;
-	filter: brightness(0) invert(1);
+	filter: var(--icon-filter);
 	transition: filter 0.25s ease;
 }
 
@@ -202,8 +293,8 @@ body {
 	top: -35px;
 	left: 50%;
 	transform: translateX(-50%) translateY(10px);
-	background-color: #333333;
-	color: white;
+	background-color: var(--tooltip-bg-color);
+	color: var(--text-color);
 	padding: 5px 10px;
 	border-radius: 4px;
 	font-size: 12px;
@@ -221,7 +312,7 @@ body {
 	transform: translateX(-50%) translateY(5px);
 	border-width: 5px;
 	border-style: solid;
-	border-color: #333333 transparent transparent transparent;
+	border-color: var(--tooltip-bg-color) transparent transparent transparent;
 	opacity: 0;
 	visibility: hidden;
 	transition: all 0.25s ease;
