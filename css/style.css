@@ -277,7 +277,7 @@ body {
 	width: 100%;
 	height: 100%;
 	filter: var(--icon-filter);
-	transition: filter 0.25s ease;
+	transition: filter 0.25s ease, transform 0.25s ease;
 }
 
 .skill-item:hover {
@@ -285,7 +285,8 @@ body {
 }
 
 .skill-item:hover img {
-	filter: brightness(0) invert(0.8) sepia(1) saturate(5) hue-rotate(180deg);
+	filter: var(--icon-filter); drop-shadow(0 0 5px var(--text-color));
+	transform: scale(1.1);
 }
 
 /* Skill Item Tooltip */
