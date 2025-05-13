@@ -45,7 +45,6 @@ const names = ["jishy", "jishe"];
 const chars = "abcdefghijklmnopqrstuvwxyz";
 let nameIndex = 0;
 let isAnimating = false;
-let currentText = names[nameIndex];
 
 function getRandomChar() {
 	return chars.charAt(Math.floor(Math.random() * chars.length));
