@@ -71,6 +71,11 @@ body {
 	z-index: 10;
 	transition: all 0.3s ease;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+	/* For on-load animation */
+	opacity: 0;
+	animation: fadeIn 0.5s ease-out 4.8s forwards;
+	animation-delay: 3.0s;
 }
 
 .theme-toggle:hover {
@@ -105,6 +110,10 @@ body {
 	align-items: center;
 	width: 100%;
 	padding: 20px;
+
+	/* For on-load animation */
+	opacity: 0;
+	animation: fadeIn 0.4s ease-out forwards;
 }
 
 .profile {
@@ -127,6 +136,11 @@ body {
 	transition:
 		background-color 0.3s ease,
 		box-shadow 0.3s ease;
+
+	/* For on-load animation */
+	opacity: 0;
+	transform: translateY(50px);
+	animation: slideUp 0.6s ease-out 0.2s forwards;
 }
 
 /* Profile Header - Side by side layout */
@@ -170,6 +184,16 @@ body {
 	transition: color 0.3s ease;
 }
 
+/* For on-load animation */
+.pfp, .name, .bio {
+	opacity: 0;
+	animation: fadeIn 0.5s ease-out forwards;
+}
+
+.pfp { animation-delay: 0.8s; }
+.name { animation-delay: 1.0s; }
+.bio { animation-delay: 1.2s; }
+
 /* Social Links */
 .social-links {
 	display: flex;
@@ -195,7 +219,19 @@ body {
 		color 0.3s ease;
 	min-width: 120px;
 	justify-content: center;
+
+	/* For on-load animation */
+	opacity: 0;
+	animation: fadeIn 0.5s ease-out forwards;
 }
+
+/* Social buttons staggered animation */
+.social-btn:nth-child(1) { animation-delay: 1.4s; }
+.social-btn:nth-child(2) { animation-delay: 1.5s; }
+.social-btn:nth-child(3) { animation-delay: 1.6s; }
+.social-btn:nth-child(4) { animation-delay: 1.7s; }
+.social-btn:nth-child(5) { animation-delay: 1.8s; }
+.social-btn:nth-child(6) { animation-delay: 1.9s; }
 
 .social-btn:hover {
 	transform: translateY(-3px);
@@ -233,10 +269,9 @@ body {
 	pointer-events: none;
 	transition:
 		opacity 0.3s ease,
-		transform 0.3s ease,
-		background-color 0.3s ease,
-		color 0.3s ease;
+		transform 0.3s ease;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+	z-index: 1000;
 }
 
 .copy-notification.show {
@@ -250,6 +285,10 @@ body {
 	border-top: 1px solid var(--divider-color);
 	margin: 15px 0;
 	transition: border-color 0.3s ease;
+
+	/* For on-load animation */
+	opacity: 0;
+	animation: fadeIn 0.4s ease-out 2.0s forwards;
 }
 
 .skills-container {
@@ -271,7 +310,21 @@ body {
 	background-color: transparent;
 	cursor: pointer;
 	transition: all 0.25s ease;
+
+	/* For on-load animation */
+	opacity: 0;
+	animation: fadeIn 0.5s ease-out forwards;
 }
+
+/* Skill Item staggered animation */
+.skill-item:nth-child(1) { animation-delay: 2.1s; }
+.skill-item:nth-child(2) { animation-delay: 2.2s; }
+.skill-item:nth-child(3) { animation-delay: 2.3s; }
+.skill-item:nth-child(4) { animation-delay: 2.4s; }
+.skill-item:nth-child(5) { animation-delay: 2.5s; }
+.skill-item:nth-child(6) { animation-delay: 2.6s; }
+.skill-item:nth-child(7) { animation-delay: 2.7s; }
+.skill-item:nth-child(8) { animation-delay: 2.8s; }
 
 .skill-item img {
 	width: 100%;
@@ -326,6 +379,23 @@ body {
 	opacity: 1;
 	visibility: visible;
 	transform: translateX(-50%) translateY(0);
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 /* Responsive design */
