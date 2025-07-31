@@ -1,18 +1,18 @@
 /* Theme Variables */
 :root {
 	/* Dark Theme - Default */
-	--bg-color: #121212;
-	--profile-bg-img: url("../assets/backgrounds/the_deep_dark.jpg");
+	--bg-color: #141414;
+	--profile-bg-img: url("../assets/backgrounds/niagara_at_night.jpg");
 	--profile-bg-color: #1e1e1e;
 	--profile-gradient: linear-gradient(
-		rgba(30, 30, 30, 0.3),
-		rgba(30, 30, 30, 0.6)
+		rgba(30, 30, 30, 0.678),
+		rgb(30, 30, 30)
 	);
 	--text-color: #ffffff;
 	--bio-color: #aaaaaa;
 	--border-color: #2d2d2d;
 	--divider-color: #444444;
-	--btn-bg-color: #333333;
+	--btn-bg-color: #3333339e;
 	--box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 	--tooltip-bg-color: #333333;
 	--icon-filter: brightness(0) invert(1);
@@ -118,29 +118,27 @@ body {
 
 .profile {
     position: relative;
-	background-color: var(--profile-bg-color);
-	border-radius: 12px;
-	padding: 20px 40px;
-	box-shadow: var(--box-shadow);
-	max-width: 900px;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 15px;
-
-	/* Background Image - Using a layering effect with a gradient overlay (30% opacity at top, 60% at bottom) to darken the image */
-	background: var(--profile-gradient), var(--profile-bg-img);
-	background-size: cover;
-	background-position: center;
-	transition:
-		background-color 0.3s ease,
-		box-shadow 0.3s ease;
-
-	/* For on-load animation */
-	opacity: 0;
-	transform: translateY(50px);
-	animation: slideUp 0.6s ease-out 0.2s forwards;
+    background-color: var(--profile-bg-color);
+    border-radius: 12px;
+    padding: 20px 40px;
+    box-shadow: var(--box-shadow);
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* Background Image - Using a layering effect with a gradient overlay (30% opacity at top, 60% at bottom) to darken the image */
+    background-image: var(--profile-gradient), var(--profile-bg-img);
+    background-size: cover, cover; /* Ensure both layers cover the element */
+    background-position: center, center -210px; /* position the gradient and image separately */
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+    /* For on-load animation */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.6s ease-out 0.2s forwards;
 }
 
 /* Profile Header - Side by side layout */
@@ -429,6 +427,8 @@ body {
 	}
 
 	.profile {
+		background-position: center, top center;
+
 		padding: 20px;
 		max-width: 90%;
 	}
