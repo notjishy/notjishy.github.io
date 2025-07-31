@@ -1,4 +1,4 @@
-const names = ["jishy", "jishe"];
+const names = ["jishy", "jishe", "jyshe"];
 const chars = "abcdefghijklmnopqrstuvwxyz";
 let nameIndex = 0;
 let isAnimating = false;
