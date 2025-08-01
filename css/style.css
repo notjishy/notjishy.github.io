@@ -19,6 +19,7 @@
 	--box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 	--tooltip-bg-color: #333333;
 	--icon-filter: brightness(0) invert(1);
+	--snowfella-filter: invert(0);
 }
 
 .light-theme {
@@ -40,6 +41,7 @@
 	--box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 	--tooltip-bg-color: #e0e0e0;
 	--icon-filter: brightness(0);
+	--snowfella-filter: invert(1);
 }
 
 /* General styles */
@@ -258,22 +260,43 @@ body {
 .bio-container {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	width: 100%;
+	position: relative;
 }
 
 .bio {
 	color: var(--bio-color);
 	font-size: 16px;
 	margin: 0;
+	width: calc(100% - 120px);
+}
+
+.pronouns-container {
+	position: absolute;
+	right: 0;
+	top: -40px;
+	width: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.snowfella {
+	width: 40px;
+	margin-bottom: 5px;
+	filter: var(--snowfella-filter);
+
+	/* For on-load animation */
+	opacity: 0;
+	animation: fadeIn 0.5s ease-out forwards;
+	animation-delay: 1.0s;
 }
 
 .pronouns {
 	color: var(--bio-color);
 	font-size: 16px;
 	line-height: 1.4;
-	transition: color 0.3s ease;
-	margin-left: 20px;
 
 	/* For on-load animation */
 	opacity: 0;
@@ -559,8 +582,19 @@ body {
 		gap: 5px;
 	}
 
-	.pronouns {
-		margin-left: 0;
+	.bio {
+		width: 100%;
+	}
+
+	.pronouns-container {
+		position: static;
+		margin-top: 10px;
+		width: 100%;
+	}
+
+	.snowfella, .pronouns {
+		position: static;
+		transform: none;
 	}
 
 	.profile {
