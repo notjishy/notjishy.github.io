@@ -3,7 +3,7 @@
 	/* Dark Theme - Default */
 	--bg-image: url("../assets/backgrounds/tower_bridge.jpg");
 	--bg-color: #141414;
-	--bg-gradient: linear-gradient(rgba(30, 30, 30, 0.966),
+	--bg-gradient: linear-gradient(rgba(30, 30, 30, 0.945),
 			/* top */
 			rgb(30, 30, 30));
 	--profile-bg-img: url("../assets/backgrounds/niagara_at_night.jpg");
