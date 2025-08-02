@@ -68,7 +68,7 @@
 }
 
 .skill-item:hover img {
-	filter: var(--icon-filter), drop-shadow(0 0 5px var(--text-color));
+	filter: var(--icon-filter);
 	transform: scale(1.1);
 }
 
