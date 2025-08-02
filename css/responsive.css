@@ -1,0 +1,61 @@
+/* Mobile layout compatibility */
+@media (max-width: 900px) {
+	.bio-container {
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.bio {
+		width: 100%;
+	}
+
+	.pronouns-container {
+		position: static;
+		margin-top: 10px;
+		width: 100%;
+	}
+
+	.snowfella, .pronouns {
+		position: static;
+		transform: none;
+	}
+
+	.profile {
+		background-position: center, top center;
+
+		padding: 20px;
+		max-width: 90%;
+	}
+
+	.profile-header {
+		flex-direction: column;
+		text-align: center;
+		gap: 15px;
+	}
+
+	.profile-info {
+		text-align: center;
+	}
+
+	.social-links {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.social-btn {
+		min-width: 110px;
+		padding: 8px 15px;
+	}
+
+	.skills-container {
+		gap: 30px;
+		justify-content: center;
+	}
+
+	.skill-item {
+		width: 32px;
+		height: 32px;
+	}
+}

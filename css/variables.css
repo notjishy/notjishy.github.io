@@ -1,0 +1,45 @@
+/* Theme Variables */
+:root {
+	/* Dark Theme - Default */
+	--bg-image: url("../assets/backgrounds/tower_bridge.jpg");
+	--bg-color: #141414;
+	--bg-gradient: linear-gradient(
+            rgba(30, 30, 30, 0.945), /* top */
+			rgb(30, 30, 30));
+	--profile-bg-img: url("../assets/backgrounds/niagara_at_night.jpg");
+	--profile-bg-color: #1e1e1e;
+	--profile-gradient: linear-gradient(
+            rgba(30, 30, 30, 0.678), /* top */
+			rgb(30, 30, 30));
+	--text-color: #ffffff;
+	--bio-color: #aaaaaa;
+	--border-color: #2d2d2d;
+	--divider-color: #444444;
+	--btn-bg-color: #3333339e;
+	--box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	--tooltip-bg-color: #333333;
+	--icon-filter: brightness(0) invert(1);
+	--snowfella-filter: invert(0);
+}
+
+.light-theme {
+	--bg-image: url("../assets/backgrounds/spire.jpg");
+	--bg-color: #f0f0f0;
+	--bg-gradient: linear-gradient(
+            rgba(255, 255, 255, 0.702), /* top */
+			rgba(255, 255, 255, 0.805));
+	--profile-bg-img: url("../assets/backgrounds/snow.jpg");
+	--profile-bg-color: #ffffff;
+	--profile-gradient: linear-gradient(
+            rgba(255, 255, 255, 0.589), /* top */
+			rgba(255, 255, 255, 0.95));
+	--text-color: #121212;
+	--bio-color: #555555;
+	--border-color: #dddddd;
+	--divider-color: #cccccc;
+	--btn-bg-color: #e0e0e0;
+	--box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	--tooltip-bg-color: #e0e0e0;
+	--icon-filter: brightness(0);
+	--snowfella-filter: invert(1);
+}

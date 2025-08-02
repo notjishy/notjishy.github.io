@@ -1,0 +1,112 @@
+.skills-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+	gap: 60px;
+	width: 100%;
+	margin-top: 15px;
+}
+
+.skill-item {
+	position: relative;
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	cursor: pointer;
+	transition: all 0.25s ease;
+
+	/* For on-load animation */
+	opacity: 0;
+	animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Skill Item staggered animation */
+.skill-item:nth-child(1) {
+	animation-delay: 1.7s;
+}
+
+.skill-item:nth-child(2) {
+	animation-delay: 1.8s;
+}
+
+.skill-item:nth-child(3) {
+	animation-delay: 1.9s;
+}
+
+.skill-item:nth-child(4) {
+	animation-delay: 2.0s;
+}
+
+.skill-item:nth-child(5) {
+	animation-delay: 2.1s;
+}
+
+.skill-item:nth-child(6) {
+	animation-delay: 2.2s;
+}
+
+.skill-item:nth-child(7) {
+	animation-delay: 2.3s;
+}
+
+.skill-item:nth-child(8) {
+	animation-delay: 2.4s;
+}
+
+.skill-item img {
+	width: 100%;
+	height: 100%;
+	filter: var(--icon-filter);
+	transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.skill-item:hover {
+	transform: translateY(-5px);
+}
+
+.skill-item:hover img {
+	filter: var(--icon-filter), drop-shadow(0 0 5px var(--text-color));
+	transform: scale(1.1);
+}
+
+/* Skill Item Tooltip */
+.skill-item::before {
+	content: attr(data-tooltip);
+	position: absolute;
+	top: -35px;
+	left: 50%;
+	transform: translateX(-50%) translateY(10px);
+	background-color: var(--tooltip-bg-color);
+	color: var(--text-color);
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 12px;
+	white-space: nowrap;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.25s ease;
+}
+
+.skill-item::after {
+	content: "";
+	position: absolute;
+	top: -15px;
+	left: 50%;
+	transform: translateX(-50%) translateY(5px);
+	border-width: 5px;
+	border-style: solid;
+	border-color: var(--tooltip-bg-color) transparent transparent transparent;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.25s ease;
+}
+
+.skill-item:hover::before,
+.skill-item:hover::after {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(-50%) translateY(0);
+}

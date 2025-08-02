@@ -1,0 +1,47 @@
+
+/* General styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Arial", sans-serif;
+	color: var(--text-color);
+}
+
+body {
+	/*background-color: var(--bg-color);*/
+	background-image: var(--bg-gradient), var(--bg-image);
+	background-repeat: no-repeat;
+	background-position: center, center;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s ease;
+}
+
+/* Copy Notification */
+.copy-notification {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%) translateY(20px);
+	background-color: var(--btn-bg-color);
+	color: var(--text-color);
+	padding: 8px 16px;
+	border-radius: 4px;
+	font-size: 14px;
+	opacity: 0;
+	pointer-events: none;
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+	z-index: 1000;
+}
+
+.copy-notification.show {
+	opacity: 1;
+	transform: translateX(-50%) translateY(0);
+}
